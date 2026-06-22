@@ -49,7 +49,9 @@ export default function Login() {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-orange text-white shadow-lg mb-3">
               <Zap className="w-8 h-8" aria-hidden="true" />
             </div>
-            <h1 className="text-3xl font-extrabold tracking-tight">InternOps</h1>
+            <h1 className="text-3xl font-extrabold tracking-tight">
+              InternOps
+            </h1>
             <p className="text-gray-400 text-sm">
               Workforce &amp; Intern Management Platform
             </p>
@@ -69,14 +71,16 @@ export default function Login() {
               <div className="relative">
                 <Mail
                   className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
-                  aria-hidden="true" />
+                  aria-hidden="true"
+                />
                 <input
                   type="email"
                   placeholder="Email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-11 pr-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/30 outline-none transition"/>
+                  className="w-full pl-11 pr-4 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/30 outline-none transition"
+                />
               </div>
               <div className="relative">
                 <Lock
@@ -89,12 +93,14 @@ export default function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full pl-11 pr-12 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/30 outline-none transition"/>
+                  className="w-full pl-11 pr-12 py-3 rounded-lg bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/30 outline-none transition"
+                />
                 <button
                   type="button"
                   onClick={() => setShow((s) => !s)}
                   aria-label={show ? 'Hide password' : 'Show password'}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition" >
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition"
+                >
                   {show ? (
                     <EyeOff className="w-5 h-5" aria-hidden="true" />
                   ) : (
@@ -143,7 +149,8 @@ export default function Login() {
               Portal Announcements
             </h2>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Stay up to date with tasks, program updates, and team schedules here.
+              Stay up to date with tasks, program updates, and team schedules
+              here.
             </p>
           </div>
           <div className="bg-gray-900/60 rounded-2xl border border-gray-700/50 p-6 space-y-4">
@@ -153,16 +160,22 @@ export default function Login() {
 
             <div className="space-y-4 divide-y divide-gray-800">
               <div className="pt-4 first:pt-0">
-                <p className="text-xs text-brand-orange font-semibold">Weekly Reminder</p>
+                <p className="text-xs text-brand-orange font-semibold">
+                  Weekly Reminder
+                </p>
                 <p className="text-sm text-gray-200 mt-1">
-                  Remember to submit your weekly task remarks and proof screenshots by Friday at 5:00 PM.
+                  Remember to submit your weekly task remarks and proof
+                  screenshots by Friday at 5:00 PM.
                 </p>
               </div>
 
               <div className="pt-4">
-                <p className="text-xs text-brand-green font-semibold">AI Assistant Online</p>
+                <p className="text-xs text-brand-green font-semibold">
+                  AI Assistant Online
+                </p>
                 <p className="text-sm text-gray-200 mt-1">
-                  The brand new AI Assistant is online. Select your role to get assistance with ratings, proof uploads, and platform queries.
+                  The brand new AI Assistant is online. Select your role to get
+                  assistance with ratings, proof uploads, and platform queries.
                 </p>
               </div>
             </div>
