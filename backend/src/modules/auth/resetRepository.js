@@ -152,4 +152,3 @@ module.exports = {
   getResetAttemptState,
   recordResetAttempt,
 };
-
