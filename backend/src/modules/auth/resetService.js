@@ -37,7 +37,7 @@ async function forgotPassword(email, requestInfo) {
     resourceType: 'user',
     resourceId: user.id,
     ...requestInfo,
-  });
+  };
 }
 
 async function resetPassword(token, newPassword, requestInfo) {
@@ -45,13 +45,13 @@ async function resetPassword(token, newPassword, requestInfo) {
   if (!userId) {
     throw new BadRequestError('Invalid or expired reset token');
   }
-  await createAuditLog({
+  return {
     userId,
     action: 'PASSWORD_RESET_COMPLETED',
     resourceType: 'user',
     resourceId: userId,
     ...requestInfo,
-  });
+  };
 }
 
 module.exports = { forgotPassword, resetPassword };
