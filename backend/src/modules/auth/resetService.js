@@ -37,7 +37,7 @@ async function forgotPassword(email, requestInfo) {
     resourceType: 'user',
     resourceId: user.id,
     ...requestInfo,
-  };
+  });
 }
 
 async function resetPassword(token, newPassword, requestInfo) {
