@@ -75,7 +75,12 @@ async function deleteNotification(notificationId, userId) {
   }
   return res.rowCount;
 }
-
+async function deleteAllNotifications(userId) {
+  await pool.query(
+    'UPDATE notifications SET deleted_at = NOW() WHERE user_id = $1 AND deleted_at IS NULL',
+    [userId]
+  );
+}
 async function getUnreadCount(userId) {
   const res = await pool.query(
     'SELECT COUNT(*) FROM notifications WHERE user_id = $1 AND read = FALSE AND deleted_at IS NULL',
@@ -90,5 +95,6 @@ module.exports = {
   markRead,
   markAllRead,
   deleteNotification,
+  deleteAllNotifications,
   getUnreadCount,
 };

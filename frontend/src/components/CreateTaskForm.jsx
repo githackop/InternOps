@@ -30,6 +30,7 @@ export default function CreateTaskForm() {
   });
   const [msg, setMsg] = useState('');
   const [error, setError] = useState('');
+  const [otherPlatform, setOtherPlatform] = useState('');
 
   const createMutation = useMutation({
     mutationFn: async (data) => {
@@ -68,7 +69,14 @@ export default function CreateTaskForm() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          createMutation.mutate(form);
+
+          createMutation.mutate({
+            ...form,
+            targetPlatform:
+              form.targetPlatform === 'Other' && otherPlatform.trim()
+                ? otherPlatform.trim()
+                : form.targetPlatform,
+          });
         }}
         className="space-y-3"
       >
@@ -97,6 +105,16 @@ export default function CreateTaskForm() {
               </option>
             ))}
           </Select>
+
+          {form.targetPlatform === 'Other' && (
+            <Input
+              type="text"
+              placeholder="Enter custom platform (optional)"
+              value={otherPlatform}
+              onChange={(e) => setOtherPlatform(e.target.value)}
+            />
+          )}
+
           <Input
             type="datetime-local"
             value={form.deadline}
